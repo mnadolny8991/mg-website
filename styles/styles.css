@@ -1,12 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     text-decoration: none;
     list-style-type: none;
+    font-family: 'Montserrat', sans-serif;
+}
+
+img {
+    display: block;
+    width: 100%;
 }
 
 body {
-    background-color: lightcyan;
+    display: grid;
+    grid-template-rows: auto auto 1fr auto;
+    height: 100vh;
 }
 
 a {
@@ -31,28 +41,94 @@ li {
 }
 
 .nav {
-    background-color: gray;
+    border-top: 1px solid lightgray;
 }
 
 .nav__list {
     display: flex;
-    font-size: 35px;
+    font-size: 20px;
     font-weight: bold;
     justify-content: center;
+    padding: 0;
+    text-transform: uppercase;
 }
 
 .nav__item {
     padding: 1rem 2rem 1rem 2rem;
-    border-radius: 5px;
 }
 
 .nav__item:hover {
-    background-color: lightgray;
+    border-top: 1px solid blue;
     cursor: pointer;
 }
 
 .nav__item > a {
-    color: white;
+    color: gray;
+}
+
+.main {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.main__first {
+    grid-column: span 3;
+    padding: 1.5rem;
+    padding-bottom: 1rem;
+    text-align: justify;
+    justify-self: center;
+    place-self:center;
+    background-image: linear-gradient(lightgray, white);
+    border-radius: 5px;
+}
+
+.main__second {
+    border-bottom: 1px solid lightgray;
+}
+
+.main__second:hover {
+    background-color: lightgray;
+    cursor: pointer;
+}
+
+.main__product-name {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.main__heading {
+    font-size: 25px;
+    margin-bottom: 1rem;
+}
+
+.main__paragraph {
+    font-size: 16px;
+}
+
+.footer {
+    background-color: rgb(230, 229, 229);
+    position: sticky;
+    bottom: 0;
+}
+
+.footer__container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+}
+
+.footer__item {
+    flex: 1;
+}
+
+.footer__image {
+    display: block;
+}
+
+.footer__copy {
+    text-align: right;
 }
 
 @media (max-width: 800px) {
@@ -72,5 +148,22 @@ li {
 
     .container {
         width: 100%;
+    }
+
+    .main__first {
+        width: 100%;
+    }
+
+    .main__second {
+        grid-column: span 3;
+    }
+
+    .footer__container {
+        flex-direction: column;
+    }
+
+    .nav__item:hover {
+        border-top: 0px;
+        background-image: linear-gradient(lightgray, white);
     }
 }
